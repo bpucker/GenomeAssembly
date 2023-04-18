@@ -8,10 +8,19 @@ collection of tools for the analysis and cleaning of genome assemblies
 
 ```
 Usage:
-  python3 FASTQ_stats3.py --in <DIR> --out <DIR>
+  python3 FASTQ_stats3.py --in <FILE> | --in_dir <DIR>
   
-  --in   STR   BAM input folder
-  --out  STR   BAM output file
+  mandatory:
+  --in      STR   Input FASTQ file
+  --in_dir  STR   Input folder
+  
+  optional:
+  --rfig    STR   Read length histogram figure filename
+	--cutoff  STR   Read length cutoff for histogram (kb) [100]
+	
+  --qfig    STR   Quality vs. read length figure filename
+	--lencut  STR   Upper read length cutoff (kb) [200]
+	--qualcut STR   Upper quality cutoff (phred) [40]
 ```
 
 `--in` specifies a BAM file containing folder.
