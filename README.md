@@ -41,17 +41,27 @@ Usage:
 
 
 ## Assembly statistics calculation
+This script calculates the statistics of a given assembly FASTA file. This includes trimming short contigs and cleaning the contig names. Statistics include the number of contigs, the N50, N90, and total assembly size. If an expression file is provided, the calculation of Ex90N50 can be performed.
 
 ```
 Usage:
-  python3 contig_stats3.py --in <DIR> --out <DIR>
+  python3 contig_stats3.py --in <FILE>
   
-  --in   STR   BAM input folder
-  --out  STR   BAM output file
+  --in   STR   Input FASTA file
+  
+  optional:
+  --min  INT   Minimal contig length [1000]
+  --out  STR   Output folder
+  --exp  STR   Expression file
 ```
 
-`--in` specifies a BAM file containing folder.
+`--in` specifies a FASTA file that will be analyzed. A trimmed FASTA file and a statistics file will be placed next to the input file.
 
+`--min` specifies the minimal contig length. Default: 1000 (bp).
+
+`--out` specifies an output folder. The trimmed FASTA file and the statistics file will be placed in this folder. Default: off.
+
+`--exp` specifies an expression file (normalized expression). Default: none.
 
 
 
