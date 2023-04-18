@@ -1,7 +1,7 @@
 ### Boas Pucker ###
 ### b.pucker@tu-bs.de ###
 
-__version__ = "v0.32"
+__version__ = "v0.33"
 
 
 __usage__ = """
@@ -13,7 +13,7 @@ __usage__ = """
 		optional:
 		--rfig <READ_LEN_HIST_FIGURE_FILE>
 		--cutoff <READ_LEN_CUTOFF_FOR_PLOT_IN_KB>[100]
-		--qfig <QUALITY_VS_READ_LEN_FIGURE_FILE>	DOES NOT WORK YET
+		--qfig <QUALITY_VS_READ_LEN_FIGURE_FILE>
 		--lencut <UPPER_READ_LENGTH_CUTOFF_FOR_PLOT_IN_KB>[200]
 		--qualcut <UPPER_QUAL_CUTOFF_FOR_PLOT>[40]
 		
