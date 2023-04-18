@@ -23,7 +23,12 @@ Usage:
 	--qualcut STR   Upper quality cutoff (phred) [40]
 ```
 
-`--in` specifies a BAM file containing folder.
+`--in` specifies a FASTQ input file that will be analyzed. The file should be gzip compressed.
+
+`--in_dir` specifies a FASTQ file containing input folder. Each (gzip compressed) FASTQ file in the folder will be analyzed. Supported file extensions: .fq, .fastq, .fq.gzip, fq.gz, fastq.gzip, .FQ, .FASTQ, .FQ.GZIP, .FASTQ.GZIP, .FQ.GZ, and .FASTQ.GZ.
+
+
+
 
 
 ## Assembly statistics calculation
