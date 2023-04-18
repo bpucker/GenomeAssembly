@@ -5,6 +5,7 @@ collection of tools for the analysis and cleaning of genome assemblies
 
 
 ## FASTQ statistics calculation
+This script calculates statistics of a FASTQ file including the number of reads, the average read length, the total number of sequenced bases and the read length N50. Additionally, a read length histogram and a quality vs. read length plot can be generated.
 
 ```
 Usage:
