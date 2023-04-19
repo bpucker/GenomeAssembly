@@ -66,17 +66,31 @@ Usage:
 
 
 ## Screen assembly for contamination (white list and black list)
+This script screens an assembly for contaminations. All contigs are separted into small blocks and compared against a white list and black list of sequences. This allows the identification of contamination contigs or chimeric contigs that contain contaminations.
+
 
 ```
 Usage:
-  python3 assembly_wb_screen.py --in <DIR> --out <DIR>
+  python3 assembly_wb_screen.py --in <FILE> --out <DIR> --white <FILE> --black <FILE>
   
-  --in   STR   BAM input folder
-  --out  STR   BAM output file
+  --in     STR   Input FASTA folder
+  --out    STR   BAM output file
+  --white  STR   White list FASTA file
+  --black  STR   Black list FASTA file
+  
+  optional:
+  --tmp    STR   Temp output folder
 ```
 
-`--in` specifies a BAM file containing folder.
+`--in` specifies an assembly FASTA file that will be screened for contaminations.
 
+`--out` specifies an output folder where all result files can be placed. The folder will be created if it does not exist already.
+
+`--white` specifies a FASTA file with white sequences that will be used to identify valid contigs and contig parts.
+
+`--black` specifies a FASTA file with black sequences that will be used to identify invalid (contamination) contigs and contig parts.
+
+`--tmp` specifies a temporary output folder. The `--out` folder is used for temporary files if this argument is not used.
 
 
 # References
