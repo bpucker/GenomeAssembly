@@ -64,6 +64,23 @@ Usage:
 `--exp` specifies an expression file (normalized expression). Default: none.
 
 
+## Clean genomic FASTA
+This script cleans the header names of a given FASTA file by splitting at the first white space chracter (space or tab). Some special characters are also replaced by underscores.
+
+```
+Usage:
+  python3 clean_genomic_fasta.py --in <FILE> --out <FILE>
+  
+  --in   STR   Input FASTA file
+  --out  STR   Output FASTA file
+```
+
+`--in` specifies a FASTA file that will be processed.
+
+`--out` specifies the output FASTA file.
+
+
+
 
 ## Screen assembly for contamination (white list and black list)
 This script screens an assembly for contaminations. All contigs are separted into small blocks and compared against a white list and black list of sequences. This allows the identification of contamination contigs or chimeric contigs that contain contaminations.
