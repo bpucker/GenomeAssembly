@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/623857647.svg)](https://zenodo.org/badge/latestdoi/623857647)
+
 # GenomeAssembly
 collection of tools for the analysis and cleaning of genome assemblies
 
