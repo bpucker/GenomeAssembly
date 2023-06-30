@@ -114,6 +114,6 @@ Usage:
 
 # References
 
-Meckoni S. N., Nass B., Pucker B. (2023). Phylogenetic placement of Ceratophyllum submersum based on a complete plastome sequence derived from nanopore long read sequencing data. bioRxiv 2023.06.27.546741; doi: [10.1101/2023.06.27.546741](https://doi.org/10.1101/2023.06.27.546741).
+Meckoni S. N., Nass B., Pucker B. (2023). Phylogenetic placement of _Ceratophyllum submersum_ based on a complete plastome sequence derived from nanopore long read sequencing data. bioRxiv 2023.06.27.546741; doi: [10.1101/2023.06.27.546741](https://doi.org/10.1101/2023.06.27.546741).
 
 
