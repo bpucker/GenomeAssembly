@@ -140,7 +140,17 @@ Optional:
 
 `--cov` specifies a coverage file (COV) to analyze the distribution of reads across transcripts. This argument can also be used to provide a comma-separated list of files for automatic processing of large batches of files.
 
+`--gff` specifies a GFF file that contains the exon positions for the RNA-seq coverage analysis.
 
+`--out` specifies an output folder. If this folder does not exist, it will be created.
+
+`--cutoff` specifies a minimal proportion of the transcript that needs to be covered by RNA-seq. Default value is 90.
+
+`--samtools` specifies the full path to samtools. Default: samtools.
+
+`--bedtools` specifies the full path to bedtools. Default: bedtools.
+
+`--mincov` specifies the minimal coverage of a position in order to consider it. Default: 1.
 
 
 
