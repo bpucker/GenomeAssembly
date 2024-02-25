@@ -112,6 +112,38 @@ Usage:
 `--tmp` specifies a temporary output folder. The `--out` folder is used for temporary files if this argument is not used.
 
 
+
+## Identify best supported gene models based on RNA-seq coverage ##
+This script analyzes the RNA-seq coverage of predicted transcripts. The results allow conclusions about the valididty of predicted transcripts.
+
+
+```
+Usage1
+python3 RNAseq_cov_analysis.py --bam <FILE> --gff <FILE> --out <DIR>
+
+Usage2
+python3 RNAseq_cov_analysis.py --cov <FILE> --gff <FILE> --out <DIR>
+
+Mandatory:
+--bam        STR   BAM input file    |  --cov   STR    Coverage input file
+--gff        STR   GFF input file
+--out        STR   Output folder
+
+Optional:
+--cutoff     INT    Percentage of transcript covered[90]
+--samtools   STR    Path to samtools [samtools]
+--bedtools   STR    Path to bedtools [bedtools]
+--mincov     INT    Minimal coverage per position [1]
+```
+
+`--bam` specifies a BAM input file. This will be converted into a coverage file (COV) to analyze the distribution of reads across transcripts. This argument can also be used to provide a comma-separated list of files for automatic processing of large batches of files.
+
+`--cov` specifies a coverage file (COV) to analyze the distribution of reads across transcripts. This argument can also be used to provide a comma-separated list of files for automatic processing of large batches of files.
+
+
+
+
+
 # References
 
 Meckoni S. N., Nass B., Pucker B. (2023). Phylogenetic placement of _Ceratophyllum submersum_ based on a complete plastome sequence derived from nanopore long read sequencing data. bioRxiv 2023.06.27.546741; doi: [10.1101/2023.06.27.546741](https://doi.org/10.1101/2023.06.27.546741).
