@@ -1,7 +1,7 @@
 ### Boas Pucker ###
 ### b.pucker@tu-bs.de ###
 
-__version__ = "v0.33"
+__version__ = "v0.41"
 
 
 __usage__ = """
@@ -16,6 +16,7 @@ __usage__ = """
 		--qfig <QUALITY_VS_READ_LEN_FIGURE_FILE>
 		--lencut <UPPER_READ_LENGTH_CUTOFF_FOR_PLOT_IN_KB>[200]
 		--qualcut <UPPER_QUAL_CUTOFF_FOR_PLOT>[40]
+		--quality <ACTIVATES_QUALITY_ANALYSIS>
 		
 		bug reports and feature requests: b.pucker@tu-bs.de
 		"""
@@ -53,7 +54,7 @@ def calc_avg_qual( qual ):
 	
 	quality_values = []
 	for q in qual:
-		quality_values.append( ord( q ) - 33 )
+		quality_values.append( ord( q ) - 33.0 )
 	return sum( quality_values ) / float( len( quality_values ) )
 
 
@@ -90,11 +91,20 @@ def analyze_FASTQ( filename, qual_status ):
 			n50 = calculate_n50( total_length )
 			
 			sys.stdout.write(  filename + "\n" )
+			sys.stdout.write(  "total number of nucleotides:\t" + str( total_len / 1000000000.0 ) + " Gbp\n" )
+			sys.stdout.write(  "N50: " + str( n50 ) + "\n" )
 			sys.stdout.write( "number of reads: " + str( len( total_length ) ) + "\n" )
-			sys.stdout.write(  "total number of nucleotides:\t" + str( total_len ) + "\n" )
+			
 			sys.stdout.write(  "average read length:\t" + str( total_len / float( len( total_length ) ) ) + "\n" )
 			sys.stdout.write(  "GC content:\t" + str( total_gc / float( total_len ) ) + "\n" )
-			sys.stdout.write(  "N50: " + str( n50 ) + "\n" )
+			
+			if qual_status:
+				if len( average_quality ) > 0:
+					sum_avg_qual = sum( average_quality ) / len( average_quality )
+				else:
+					sum_avg_qual = 0
+				sys.stdout.write( "average read quality score: " + str( sum_avg_qual ) + "\n" )
+			
 			sys.stdout.flush()
 		
 	else:
@@ -119,11 +129,20 @@ def analyze_FASTQ( filename, qual_status ):
 			n50 = calculate_n50( total_length )
 			
 			sys.stdout.write( filename + "\n" )
+			sys.stdout.write( "total number of nucleotides:\t" + str( total_len / 1000000000.0 ) + " Gbp\n" )
+			sys.stdout.write( "N50: " + str( n50 ) + "\n" )
 			sys.stdout.write( "number of reads: " + str( len( total_length ) ) + "\n" )
-			sys.stdout.write( "total number of nucleotides:\t" + str( total_len ) + "\n" )
+			
 			sys.stdout.write( "average read length:\t" + str( total_len / float( len( total_length ) ) ) + "\n" )
 			sys.stdout.write( "GC content:\t" + str( total_gc / float( total_len ) ) + "\n" )
-			sys.stdout.write( "N50: " + str( n50 ) + "\n" )
+			
+			if qual_status:
+				if len( average_quality ) > 0:
+					sum_avg_qual = sum( average_quality ) / len( average_quality )
+				else:
+					sum_avg_qual = 0
+				sys.stdout.write( "average read quality score: " + str( sum_avg_qual ) + "\n" )
+			
 			sys.stdout.flush()
 	return total_length, average_quality
 
@@ -194,7 +213,10 @@ def main( arguments ):
 	if '--qfig' in arguments:
 		qual_status = True
 	else:
-		qual_status = False
+		if '--quality' in arguments:
+			qual_status = True
+		else:
+			qual_status = False
 	
 	if '--in_file' in arguments or '--in' in arguments:	#single file mode
 		if '--in_file' in arguments:
@@ -243,4 +265,4 @@ if '--in_file' in sys.argv or '--in_dir' in sys.argv or '--in' in sys.argv:
 	main( sys.argv )
 else:
 	sys.exit( __usage__ )
-	
+
