@@ -155,7 +155,5 @@ Optional:
 
 
 # References
-
-Meckoni S. N., Nass B., Pucker B. (2023). Phylogenetic placement of _Ceratophyllum submersum_ based on a complete plastome sequence derived from nanopore long read sequencing data. bioRxiv 2023.06.27.546741; doi: [10.1101/2023.06.27.546741](https://doi.org/10.1101/2023.06.27.546741).
-
-
+- Meckoni, S.N., Nass, B. & Pucker, B. Phylogenetic placement of _Ceratophyllum submersum_ based on a complete plastome sequence derived from nanopore long read sequencing data. BMC Res Notes 16, 187 (2023). doi: [10.1186/s13104-023-06459-z](https://doi.org/10.1186/s13104-023-06459-z).
+- de Oliveira, J. A. V. S.; Choudhary, N.; Meckoni, S. N.; Nowak, M. S.; Hagedorn, M.; Pucker, B. (2025). Cookbook for Plant Genome Sequences. BMC Genomics (2026). doi: [10.1186/s12864-026-12623-z](https://doi.org/10.1186/s12864-026-12623-z).
